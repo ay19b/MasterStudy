@@ -1,0 +1,51 @@
+.navbar{
+    position: absolute;
+    width: 100%;
+    margin-top: 30px;
+}
+.navbar .container{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.container .logo{
+    width: 16rem;
+    cursor: pointer;
+}
+.container .left{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+}
+.left .item{
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.left .item:hover{
+    color: rgb(234, 184, 48);
+}
+.item .heart{
+    font-size: 20px;
+}
+.item .search{
+    border: 2px solid white;
+    padding: 4px;
+    font-size: 20px;
+    background: linear-gradient(to right, #ffa500 0%, #ffa500 50%, transparent 50%, transparent 100%);
+    background-size: 200% 100%;
+    background-position: right;
+    transition: background-position 0.3s;
+}
+.item .search:hover {
+    background-position: left;
+    color: white !important;
+}
+
+
+
+

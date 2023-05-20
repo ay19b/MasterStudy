@@ -1,0 +1,57 @@
+.subscribe{
+    background-color: #2c75e4;
+}
+.subsc-content{
+    width: 90%;
+    margin: auto;
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.defini-subsc{
+    flex: 0.5;
+}
+.defini-subsc h3{
+    font-size: 19px;
+    color: white;
+}
+.defini-subsc span{
+    font-size: 15px;
+    color: white;
+}
+.send-email{
+    flex: 0.4;
+}
+.send-email h5{
+    font-size: 14px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+.send-email .email{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.send-email .email input{
+    flex: 0.7;
+    padding: 12px;
+    font-size: 14px;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+}
+.send-email .email button{
+    flex: 0.3;
+    padding: 12px;
+    font-size: 14px;
+    color: white;
+    background-color: #273044;
+    border: 2px solid transparent;
+}
+
+@media (max-width: 840px) {
+    .subsc-content{
+        display: block;
+    }
+}

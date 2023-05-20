@@ -1,0 +1,120 @@
+.footer{
+    background-color: #273044;
+}
+.footer-content{
+    width: 90%;
+    margin: auto;
+    padding: 12px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.footer-content .part{
+    flex: 0.24;
+}
+.footer-content .part h5{
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+.footer-content .part p{
+    font-size: 13px;
+    color: white;
+    line-height: 20px;
+}
+.footer-content .part p span{
+    color: #2c75e4;
+}
+.part button{
+    background-color: transparent;
+    color: white;
+    padding: 10px 16px;
+    border: 2px solid white;
+    outline: none;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(to right, #657aac 0%, #657aac 50%, transparent 50%, transparent 100%);
+    transition: background-position 0.3s;
+    background-size: 200% 100%;
+    background-position: right;
+    cursor: pointer;
+}
+.part button:hover{
+    background-position: left;
+}
+.footer-content .footer-courses{
+    display: flex;
+    flex-direction: column;
+}
+.footer-content .footer-courses .footer-course{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+.footer-course img{
+    width: 3.2rem;
+    height: 3.3rem;
+    flex: 0.1;
+}
+.footer-course .dtl-course{
+    flex: 0.78;
+}
+.footer-course .dtl-course h3{
+    margin: 0;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+}
+.footer-course .dtl-course h3:hover{
+    color: #385bce;
+}
+.footer-course .dtl-course span{
+    font-size: 12px;
+    color: #aaaaaa;
+    text-transform: uppercase;
+}
+.part .list-pages{
+    display: flex;
+    flex-direction: column;
+}
+.list-pages .item-page{
+    display: flex;
+    align-items: center;
+    border-bottom: 0.5px solid #aaa;
+    padding: 10px 0;
+}
+.item-page h5{
+    font-size: 12px !important;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin: 0;
+    cursor: pointer;
+}
+.item-page h5:hover{
+    color:#eab830;
+}
+.item-page h6{
+    font-size: 12px;
+    font-weight: bolder;
+    color: orange;
+    margin: 0;
+    margin-right: 6px;
+}
+
+.item-contact{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+.item-contact svg{
+    font-size: 20px;
+    color: #aaaaaa;
+    flex: 0.15;
+}
+.item-contact h4{
+    font-size: 13px;
+    color: white;
+    flex: 0.85;
+    margin: 0;
+    font-weight: normal;
+}

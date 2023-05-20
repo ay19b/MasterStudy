@@ -1,0 +1,69 @@
+.statistic{
+    background-image: url('../../images/achivements.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    margin-top: 80px;
+    position: relative;
+}
+.overlay-bg{
+    background-color: rgba(0,0,0,0.2);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.static-content{
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+    z-index: 10;
+    position: relative;
+}
+.static-content h1{
+    font-size: 38px;
+    line-height: 36px;
+    color: white;
+}
+.static-content span{
+    font-size: 16px;
+    line-height: 26px;
+    color: white;
+}
+.info-static{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px 0;
+}
+.info-static .item-static{
+    margin: 35px 0;
+}
+.info-static .item-static svg{
+    font-size: 65px;
+    color: white;
+}
+.info-static .item-static h4{
+    font-size: 50px;
+    color: #eab830;
+    margin: 0;
+}
+.info-static .item-static span{
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: bold;
+}
+
+@media (max-width: 710px) {
+   .info-static{
+      flex-direction: column;
+   }
+   .info-static .item-static svg{
+      font-size: 55px;
+   }
+   .info-static .item-static h4 {
+    font-size: 40px;
+   }
+
+}

@@ -1,0 +1,70 @@
+.teacher{
+    background-image: url("../../images/teacher_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+.teacher-content{
+    width: 90%;
+    margin: auto;
+    padding-top: 45px;
+}
+.teacher-content .btn{
+    background-color: #2c7aff;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    padding: 9px;
+}
+.teacher-content .btn:hover{
+    background-color: #162a4e;
+}
+.info-teacher{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.info-teacher .item-teacher h1{
+    font-size: 60px;
+    color: #162a4e;
+    cursor: context-menu;
+}
+.info-teacher .item-teacher h1:hover{
+    color: #227aff;
+}
+.info-teacher .item-teacher h5{
+    font-size: 16px;
+    color: #001931;
+}
+.info-teacher .item-teacher p{
+    font-size: 18px;
+    line-height: 30px;
+    color: #001931;
+}
+.teacher-course{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.teacher-course h2{
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #001931;
+    margin-bottom: 30px;
+}
+
+
+@media (max-width: 1024px) {
+    .info-teacher{
+        flex-direction: column;
+    }
+    .teacher-course{
+        position: relative !important;
+    }
+    .info-teacher .person{
+        display: none;
+    }
+}
