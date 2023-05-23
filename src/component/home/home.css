@@ -68,9 +68,8 @@
     justify-content: center;
     text-align: center;
     flex: 0.19;
-    padding: 30px 15px;
     border-radius: 12px;
-    height: 10rem;
+    height: 12rem;
     cursor: pointer;
     transition: transform 0.3s;
 }
@@ -84,4 +83,61 @@
 .carts .cart h2{
     color: white;
     font-size: 18px;
+}
+
+
+@media (max-width: 780px){
+    .carts{
+        overflow-x: scroll;
+        overflow-y: hidden;
+        width: 90vw;
+        margin: 0px 12px;
+        height: 14rem;
+    }
+    .carts .cart{
+        width: 50%;
+        min-width: 300px;
+        max-width: 50%;
+        margin-right: 6px;
+        margin-bottom: 6px;
+    }
+}
+@media (max-width: 780px){
+    .hero .content h2{
+        font-size: 35px;
+    }
+    .content h1{
+        font-size: 55px;
+    }
+    .content .btn{
+        font-size: 15px;
+        width: 15rem;
+        padding: 15px;
+    }
+}
+@media (max-width: 550px){
+    .hero .content h2{
+        font-size: 30px;
+    }
+    .content h1{
+        font-size: 45px;
+    }
+    .content .btn{
+        font-size: 14px;
+        width: 13rem;
+        padding: 14px;
+    }
+}
+@media (max-width: 450px){
+    .hero .content h2{
+        font-size: 25px;
+    }
+    .content h1{
+        font-size: 35px;
+    }
+    .content .btn{
+        font-size: 13px;
+        width: 14rem;
+        padding: 12px;
+    }
 }

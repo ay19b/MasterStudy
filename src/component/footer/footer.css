@@ -118,3 +118,19 @@
     margin: 0;
     font-weight: normal;
 }
+
+
+@media (max-width: 1120px) {
+    .footer-content{
+        display: block;
+    }
+    .footer-course .dtl-course {
+        flex: 0.88 1;
+    }
+    .item-contact svg {
+        flex: 0.04 1;
+    }
+    .item-contact h4{
+        flex: 0.95 1;
+    }
+}
