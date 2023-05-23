@@ -9,8 +9,8 @@ import "./home.css"
 
 export default function Home() {
   return (
-    <div className='Home'>
-      <Header />
+    // <div className='Home'>
+      // <Header />
       <div className='hero'>
         <div className='content'>
           <h2>TAKE THE FIRST STEP </h2>
@@ -40,6 +40,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </div>
+    // </div>
   )
 }

@@ -2,25 +2,29 @@ import React from 'react'
 import Logo from "../../images/logo_transparent.png"
 import logoResponsive from "../../images/logo-colored.png"
 import {AiOutlineHeart,AiOutlineSearch} from "react-icons/ai"
-import {BiMenu} from "react-icons/bi"
+import {BiMenu,BiChevronRight} from "react-icons/bi"
 import "./header.css"
 import useMediaQuery from '@mui/material/useMediaQuery';
+import {MenuContext} from '../../context/menuContext'
+import { useContext } from "react";
 
 
 export default function Header() {
-  const matches = useMediaQuery('(max-width:800px)');
+  const matches = useMediaQuery('(max-width:1040px)');
+  const { dispatch } = useContext(MenuContext);
+  const { menu } = useContext(MenuContext);
 
   return (
-    <div className='navbar'>
+    <div className={menu?'navbar':'navbar active'}>
       <div className='container'>    
          <img src={!matches?Logo:logoResponsive} className='logo'/>
          <div className='left'>
-           <div className='item'>Courses</div>
-           <div className='item'>Memberships</div>
-           <div className='item'>Course Formats</div>
-           <div className='item'>Add Course</div>
-           <div className='item'>Demos</div>
-           <div className='item'>Pages</div>
+           <div className='item'><span>Courses</span><BiChevronRight className='arrow'/></div>
+           <div className='item'><span>Memberships</span></div>
+           <div className='item'><span>Course Formats</span><BiChevronRight className='arrow'/></div>
+           <div className='item'><span>Add Course</span></div>
+           <div className='item'><span>Demos</span><BiChevronRight className='arrow'/></div>
+           <div className='item'><span>Pages</span><BiChevronRight className='arrow'/></div>
            <div className='item'>
              <AiOutlineHeart className='heart'/>
            </div>
@@ -28,7 +32,7 @@ export default function Header() {
              <AiOutlineSearch className='search'/>
            </div>
          </div>   
-         <BiMenu className='menu'/>    
+         <BiMenu className='menu' onClick={() => dispatch({ type: "TOGGLE" })}/>    
       </div>
     </div>
   )

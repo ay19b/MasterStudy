@@ -1,7 +1,11 @@
 .navbar{
-    position: absolute;
+    position: relative;
     width: 100%;
-    margin-top: 30px;
+    height: 100%;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    z-index: 1;
+    overflow: hidden;
 }
 .navbar .container{
     width: 90%;
@@ -45,7 +49,9 @@
     background-position: left;
     color: white !important;
 }
-
+.item .arrow{
+    display: none;
+}
 .menu{
     font-size: 2.5rem;
     color: #ffa500;
@@ -54,25 +60,48 @@
 }
 
 
-@media (max-width: 800px){
+@media (max-width: 1040px){
     .navbar{
         position: relative;
+        transition: height 0.3s ease-out;
+        height: 55px;
+    }
+    .navbar.active{
+        height: 26rem;
     }
     .menu{
         display: block;
     }
     .container .left{
         position: absolute;
-        width: 100%;
-        top: 57px;
+        width: 96%;
+        top: 92px;
         display: flex;
         flex-direction: column;
-        left: 0;
+        left: 16px;
         background-color: #ccc;
         padding: 20px 0;
+        align-items: flex-start;
     }
     .left .item{
-        margin-bottom: 20px;
+        color: #555;
+        margin: 0 42px 20px 42px;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: normal;
+    }
+    .item .arrow{
+        display: initial;
+        font-size: 25px;
+    }
+    .item .heart{
+        display: none;
+    }
+    .left .item{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
     }
 }
 
