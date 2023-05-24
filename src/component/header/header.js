@@ -15,7 +15,7 @@ export default function Header() {
   const { menu } = useContext(MenuContext);
 
   return (
-    <div className={menu?'navbar':'navbar active'}>
+    <div className={!menu?'navbar':'navbar active'}>
       <div className='container'>    
          <img src={!matches?Logo:logoResponsive} className='logo'/>
          <div className='left'>
