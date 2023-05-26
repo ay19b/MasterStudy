@@ -10,7 +10,7 @@
     padding-top: 45px;
 }
 .teacher-content .btn{
-    background-color: #2c7aff;
+    background-color: var(--second-color);
     outline: none;
     border: none;
     font-size: 14px;
@@ -29,20 +29,20 @@
 }
 .info-teacher .item-teacher h1{
     font-size: 60px;
-    color: #162a4e;
+    color: var(--third-color);
     cursor: context-menu;
 }
 .info-teacher .item-teacher h1:hover{
-    color: #227aff;
+    color: var(--second-color);
 }
 .info-teacher .item-teacher h5{
     font-size: 16px;
-    color: #001931;
+    color: var(--third-color);
 }
 .info-teacher .item-teacher p{
     font-size: 18px;
     line-height: 30px;
-    color: #001931;
+    color: var(--third-color);
 }
 .teacher-course{
     position: absolute;
@@ -52,7 +52,7 @@
 .teacher-course h2{
     font-size: 16px;
     text-transform: uppercase;
-    color: #001931;
+    color: var(--third-color);
     margin-bottom: 30px;
 }
 
