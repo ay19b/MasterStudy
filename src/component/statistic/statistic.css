@@ -64,6 +64,7 @@
    }
    .info-static .item-static h4 {
     font-size: 40px;
+    margin: 0;
    }
 
 }

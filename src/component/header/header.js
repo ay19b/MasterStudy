@@ -29,6 +29,7 @@ export default function Header() {
              <AiOutlineHeart className='heart'/>
            </div>
            <div className='item'>
+             <input placeholder='serach'/>
              <AiOutlineSearch className='search'/>
            </div>
          </div>   

@@ -52,6 +52,15 @@
 .item .arrow{
     display: none;
 }
+.item input{
+    display: none;
+    flex: 0.85;
+    font-size: 1rem;
+    padding: 12px;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+    border: 1px solid #aaa;
+}
 .menu{
     font-size: 2.5rem;
     color: #ffa500;
@@ -85,10 +94,14 @@
     }
     .left .item{
         color: #555;
-        margin: 0 42px 20px 42px;
+        margin: 0 auto 20px auto;
         text-transform: uppercase;
         font-size: 18px;
         font-weight: normal;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
     }
     .item .arrow{
         display: initial;
@@ -97,11 +110,21 @@
     .item .heart{
         display: none;
     }
-    .left .item{
+    .item:last-child{
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 90%;
+        margin-top: -18px;
+    }
+    .item input{
+        display: block;
+    }
+    .item .search{
+        flex: 0.15;
+        padding: 12px 0;
+        background-color: #ffa500;
+        color: white;
+        border: none;
     }
 }
 
