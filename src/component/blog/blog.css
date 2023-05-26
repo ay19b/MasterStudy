@@ -56,7 +56,7 @@
     top: 50%;
     left: 50%;
     font-size: 3rem;
-    translate: -50% -50%;
+    transform: translate(-50%,-50%);
     color: white;
 }
 
@@ -70,16 +70,16 @@
     flex: 0.13;
 }
 .date-blog .date{
-    border: 2px solid #eab830;
+    border: 2px solid var(--primary-color);
 }
 .date-blog .date h3{
-    color: #eab830;
+    color: var(--primary-color);
     margin: 0;
     font-size: 24px;
     font-weight: normal;
 }
 .date-blog .date h5{
-    color: #eab830;
+    color: var(--primary-color);
     margin: 0 0 6px 0;
     font-size: 11px;
     font-weight: normal;
@@ -94,7 +94,7 @@
     cursor: pointer;
 }
 .inf-blog h3:hover{
-    color: #2c75e4;
+    color: var(--second-color);
 }
 .inf-blog p{
     font-size: 14px;
@@ -102,7 +102,7 @@
     line-height: 22px;
 }
 .inf-blog .line{
-    border: 2px solid #2c75e4;
+    border: 2px solid var(--second-color);
     width: 2rem;
     margin-bottom: 12px;
 }
@@ -112,7 +112,7 @@
     margin: 4px 0;
 }
 .inf-blog .tags span{
-    color: #2c75e4;
+    color: var(--second-color);
     cursor: pointer;
 }
 

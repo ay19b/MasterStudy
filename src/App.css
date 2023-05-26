@@ -1,7 +1,15 @@
+:root {
+    --primary-color: #ffa500;
+    --primary-color-hover:rgb(234, 184, 48);
+    --second-color:#06f;
+    --second-color-hover:#2C7AFF;
+    --font-family: 'Montserrat', sans-serif;
+}
 body{
     margin: auto; 
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-family);
 }
 .App{
     margin: -19px auto;
 }
+

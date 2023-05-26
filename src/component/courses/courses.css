@@ -28,11 +28,11 @@
     color: #4D5D6F;
 }
 .btns button.active{
-    background-color: blue;
+    background-color: var(--second-color);
     color: white;
 }
 .btns button:hover{
-    background-color: #2C7AFF;
+    background-color: var(--second-color-hover);
     color: white;
 }
 .list-course{
@@ -106,7 +106,7 @@
     align-items: center;
 }
 .detail-course .rating .iconRating{
-    color: orange;
+    color: var(--primary-color);
 }
 .detail-course .rating .svg{
     font-size: 23px;
@@ -136,7 +136,7 @@
     width: auto;
     border: none;
     cursor: pointer;
-    background-color: #2C7AFF;
+    background-color: var(--second-color);
     color: white;
     position: absolute;
     left: 50%;
@@ -144,7 +144,7 @@
     transform: translate(-50%);
 }
 .more:hover{
-    background-color: #6a9df5;
+    background-color: var(--second-color-hover);
 }
 
 @media (max-width: 1070px) {

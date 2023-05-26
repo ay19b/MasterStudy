@@ -31,7 +31,7 @@
     cursor: pointer;
 }
 .left .item:hover{
-    color: rgb(234, 184, 48);
+    color: var(--primary-color-hover);
 }
 .item .heart{
     font-size: 20px;
@@ -40,7 +40,7 @@
     border: 2px solid white;
     padding: 4px;
     font-size: 20px;
-    background: linear-gradient(to right, #ffa500 0%, #ffa500 50%, transparent 50%, transparent 100%);
+    background: linear-gradient(to right, var(--primary-color) 0%, var(--primary-color) 50%, transparent 50%, transparent 100%);
     background-size: 200% 100%;
     background-position: right;
     transition: background-position 0.3s;
@@ -63,7 +63,7 @@
 }
 .menu{
     font-size: 2.5rem;
-    color: #ffa500;
+    color: var(--primary-color);
     cursor: pointer;
     display: none;
 }

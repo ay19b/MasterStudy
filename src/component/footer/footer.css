@@ -22,7 +22,7 @@
     line-height: 20px;
 }
 .footer-content .part p span{
-    color: #2c75e4;
+    color: var(--second-color);
 }
 .part button{
     background-color: transparent;
@@ -32,7 +32,7 @@
     outline: none;
     font-size: 13px;
     font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(to right, #657aac 0%, #657aac 50%, transparent 50%, transparent 100%);
+    background: linear-gradient(to right, var(--second-color-hover) 0%, var(--second-color-hover) 50%, transparent 50%, transparent 100%);
     transition: background-position 0.3s;
     background-size: 200% 100%;
     background-position: right;
@@ -65,7 +65,7 @@
     cursor: pointer;
 }
 .footer-course .dtl-course h3:hover{
-    color: #385bce;
+    color: var(--second-color-hover);
 }
 .footer-course .dtl-course span{
     font-size: 12px;
@@ -95,7 +95,7 @@
 .item-page h6{
     font-size: 12px;
     font-weight: bolder;
-    color: orange;
+    color: var(--primary-color);
     margin: 0;
     margin-right: 6px;
 }

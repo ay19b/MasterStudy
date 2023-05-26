@@ -1,5 +1,5 @@
 .subscribe{
-    background-color: #2c75e4;
+    background-color: var(--second-color);
 }
 .subsc-content{
     width: 90%;
@@ -48,6 +48,7 @@
     color: white;
     background-color: #273044;
     border: 2px solid transparent;
+    cursor: pointer;
 }
 
 @media (max-width: 840px) {
