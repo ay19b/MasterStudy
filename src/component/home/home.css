@@ -60,7 +60,7 @@
     align-items: center;
     justify-content: space-between;
     left: 50%;
-    translate: -50%;
+    transform: translate(-50%);
     width: 90%;
 }
 .carts .cart{
