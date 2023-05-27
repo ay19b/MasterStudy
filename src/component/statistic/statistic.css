@@ -44,6 +44,9 @@
     font-size: 65px;
     color: white;
 }
+.info-static .item-static .count{
+    min-width: 12rem;
+}
 .info-static .item-static .count span{
     font-size: 50px;
     color: #eab830;
