@@ -1,21 +1,27 @@
-import React from 'react'
-import Header from '../header/header'
+import React, { useEffect } from 'react';
 import {SlScreenDesktop} from "react-icons/sl"
 import {BsTree} from "react-icons/bs"
 import {AiOutlineCalculator} from "react-icons/ai"
 import {TbBrandGoogleAnalytics} from "react-icons/tb"
 import {GiMouse} from "react-icons/gi"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import "./home.css"
 
 export default function Home() {
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
-    // <div className='Home'>
-      // <Header />
       <div className='hero'>
         <div className='content'>
+        <div data-aos="fade-up" data-aos-duration="1200">
           <h2>TAKE THE FIRST STEP </h2>
           <h1>TO KNOWLEDGE WITH US</h1>
           <button className='btn'>Ready to get Started ?</button>
+        </div>
         </div>
         <div className='carts'>
           <div className='cart' style={{backgroundColor:"#10c45c"}}>
@@ -40,6 +46,5 @@ export default function Home() {
           </div>
         </div>
       </div>
-    // </div>
   )
 }

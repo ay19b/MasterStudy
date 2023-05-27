@@ -24,7 +24,6 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(45deg);
-    border-radius: 4px;
     border-top-color: var(--primary-color);
     border-left-color: var(--primary-color);
 } 
