@@ -41,6 +41,9 @@
     gap: 20px;
     margin-bottom: 35px;
 }
+.list-course.active {
+    opacity: 0.5;
+}
 .course{
     height: 23rem;
     overflow: hidden;

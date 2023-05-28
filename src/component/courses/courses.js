@@ -10,14 +10,23 @@ export default function Courses() {
   const [item, setItem] = useState('New');
   const [Data, setData] = useState(New);
   const [count, setCount] = useState(8);
+  const [showClassName, setShowClassName] = useState(false);
+
 
   const handleButtonClick = (value) => {
     setItem(value);
-    setCount(8)
+    setCount(8);
+    setShowClassName(true)
   };
 
   const More = () => {
-    setCount(count + 8);
+    setTimeout(()=>{
+      setCount(count + 8)
+    },2000)
+    setShowClassName(true)
+    if(count>Data.length){
+      setShowClassName(false)
+    }
   };
 
   useEffect(() => {
@@ -31,6 +40,15 @@ export default function Courses() {
 
   }, [item]);
 
+  useEffect(() => {
+    if (showClassName) {
+      const timeout = setTimeout(() => {
+        setShowClassName(false);
+      }, 2000);
+
+      return () => clearTimeout(timeout);
+    }
+  }, [showClassName]);
 
 
 console.log(count);
@@ -61,7 +79,7 @@ console.log(count);
             </button>
           </div>
         </div>
-        <div className='list-course'>
+        <div className={showClassName?'list-course active':'list-course'}>
           {Data
           .slice(0,count)
           .map((item,id)=>{
