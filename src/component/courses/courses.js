@@ -14,7 +14,9 @@ export default function Courses() {
 
 
   const handleButtonClick = (value) => {
-    setItem(value);
+    setTimeout(()=>{
+      setItem(value)
+    },2000);
     setCount(8);
     setShowClassName(true)
   };
