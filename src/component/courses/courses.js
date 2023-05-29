@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import img from "../../images/newset/Mountain-540x700.jpg"
 import "./courses.css"
 import Rating from '@mui/material/Rating';
 import {AiOutlineHeart} from "react-icons/ai"
@@ -13,47 +12,50 @@ export default function Courses() {
   const [showClassName, setShowClassName] = useState(false);
 
 
+
+  
   const handleButtonClick = (value) => {
-    setTimeout(()=>{
-      setItem(value)
-    },2000);
     setCount(8);
-    setShowClassName(true)
+    setShowClassName(true);
+    setItem(value);
   };
 
   const More = () => {
-    setTimeout(()=>{
-      setCount(count + 8)
-    },2000)
     setShowClassName(true)
-    if(count>Data.length){
+    setTimeout(()=>{
+      setCount(count + 4)
       setShowClassName(false)
-    }
+    },2000)   
   };
 
-  useEffect(() => {
-    if (item === 'New') {
-      setData(New);
-    } else if (item === 'Old') {
-      setData(Old);
-    }else if (item === 'Overall') {
-      setData(Overall);
-    }
 
-  }, [item]);
+    useEffect(() => {
+      setShowClassName(true);
+      let filteredData = [];
+      const filterData = () => {
+        if (item === 'New') {
+          setTimeout(()=>{
+            filteredData = New;
+            setData(filteredData);
+            setShowClassName(false);
+          },2000)
+        } else if (item === 'Old') {         
+          setTimeout(()=>{
+            filteredData = Old;
+            setData(filteredData);
+            setShowClassName(false);
+          },2000)
+        } else if (item === 'Overall') {       
+          setTimeout(()=>{
+            filteredData = Overall;
+            setData(filteredData);
+            setShowClassName(false);
+          },2000)
+        }
+      };
+      filterData();
+    }, [item]);
 
-  useEffect(() => {
-    if (showClassName) {
-      const timeout = setTimeout(() => {
-        setShowClassName(false);
-      }, 2000);
-
-      return () => clearTimeout(timeout);
-    }
-  }, [showClassName]);
-
-
-console.log(count);
 
   return (
     <div className='courses'>
@@ -87,7 +89,7 @@ console.log(count);
           .map((item,id)=>{
             return(
             <div className='course' key={id}>
-                <img src={item.img}/>
+                <img src={item.img} alt={id}/>
                 <div className='overlay'></div>
                 <div className='course-content'>
                   <div className='info-course'>
