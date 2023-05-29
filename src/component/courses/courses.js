@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import "./courses.css"
 import Rating from '@mui/material/Rating';
 import {AiOutlineHeart} from "react-icons/ai"
 import {HiOutlineUsers,HiOutlineEye} from "react-icons/hi"
 import { New,Old,Overall} from './data';
+import "./courses.css"
+
 
 export default function Courses() {
   const [item, setItem] = useState('New');
@@ -12,8 +13,6 @@ export default function Courses() {
   const [showClassName, setShowClassName] = useState(false);
 
 
-
-  
   const handleButtonClick = (value) => {
     setCount(8);
     setShowClassName(true);
@@ -21,41 +20,34 @@ export default function Courses() {
   };
 
   const More = () => {
-    setShowClassName(true)
+    if(count<Data.length){
+      setShowClassName(true)
+    }
     setTimeout(()=>{
       setCount(count + 4)
       setShowClassName(false)
     },2000)   
   };
 
+  useEffect(() => {
+    if (item === 'New') {
+      setData(New);
+    } else if (item === 'Old') {
+      setData(Old);
+    }else if (item === 'Overall') {
+      setData(Overall);
+    }
+  }, [item]);
 
-    useEffect(() => {
-      setShowClassName(true);
-      let filteredData = [];
-      const filterData = () => {
-        if (item === 'New') {
-          setTimeout(()=>{
-            filteredData = New;
-            setData(filteredData);
-            setShowClassName(false);
-          },2000)
-        } else if (item === 'Old') {         
-          setTimeout(()=>{
-            filteredData = Old;
-            setData(filteredData);
-            setShowClassName(false);
-          },2000)
-        } else if (item === 'Overall') {       
-          setTimeout(()=>{
-            filteredData = Overall;
-            setData(filteredData);
-            setShowClassName(false);
-          },2000)
-        }
-      };
-      filterData();
-    }, [item]);
+  useEffect(() => {
+    if (showClassName) {
+      const timeout = setTimeout(() => {
+        setShowClassName(false);
+      }, 2000);
 
+      return () => clearTimeout(timeout);
+    }
+  }, [showClassName]);
 
   return (
     <div className='courses'>
