@@ -18,8 +18,9 @@ export default function Home() {
 
   return (
       <div className='hero'>
-        <LazyLoadImage src={img}
-          alt="Image Alt"
+        <LazyLoadImage 
+          src={img}
+          alt=""
           className='img'
       />
         <div className='content'>
