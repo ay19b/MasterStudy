@@ -9,6 +9,7 @@ import Subscribe from './component/subscribe/subscribe';
 import Teacher from './component/teacher/teacher';
 import CircularProgress from '@mui/material/CircularProgress';
 import './App.css';
+// import Timer from './component/timer';
 
 
 function App() {

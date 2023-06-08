@@ -4,6 +4,7 @@ import {AiOutlineHeart} from "react-icons/ai"
 import {HiOutlineUsers,HiOutlineEye} from "react-icons/hi"
 import { New,Old,Overall} from './data';
 import "./courses.css"
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 
 export default function Courses() {
@@ -81,7 +82,10 @@ export default function Courses() {
           .map((item,id)=>{
             return(
             <div className='course' key={id}>
-                <img src={item.img} alt={id}/>
+                <LazyLoadImage
+                  alt={item.img}
+                  src={item.img} 
+                />
                 <div className='overlay'></div>
                 <div className='course-content'>
                   <div className='info-course'>

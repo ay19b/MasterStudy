@@ -7,6 +7,8 @@ import {GiMouse} from "react-icons/gi"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import "./home.css"
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import img from "../../images/slide1-1919x793-1.jpg"
 
 export default function Home() {
 
@@ -16,6 +18,10 @@ export default function Home() {
 
   return (
       <div className='hero'>
+        <LazyLoadImage src={img}
+          alt="Image Alt"
+          className='img'
+      />
         <div className='content'>
         <div data-aos="fade-up" data-aos-duration="1200">
           <h2>TAKE THE FIRST STEP </h2>

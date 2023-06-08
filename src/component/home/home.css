@@ -4,14 +4,15 @@
     
 }
 .hero{
-    background-image: url('../../images/slide1-1919x793-1.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top;
     width: 100%;
     height: 50rem;
     position: relative;
     margin-top: -75px;
+}
+.hero .img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .hero .content{
     position: absolute;
