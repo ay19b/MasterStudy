@@ -7,8 +7,8 @@ import Home from './component/home/home';
 import Statistic from './component/statistic/statistic';
 import Subscribe from './component/subscribe/subscribe';
 import Teacher from './component/teacher/teacher';
-import CircularProgress from '@mui/material/CircularProgress';
 import './App.css';
+import Loading from './component/loading/loading';
 
 
 function App() {
@@ -23,12 +23,7 @@ function App() {
 
 
   return (
-    <>
-    {loading?
-      <div className='loading'>
-         <CircularProgress style={{ color: 'var(--primary-color)' }} />
-       </div>:
-       <div className="App">
+      <div className={!loading?"App":'AppLoading'}>
         <Header />
         <Home />
         <Courses />
@@ -37,9 +32,8 @@ function App() {
         <Subscribe />
         <Blog />
         <Footer />
+        {loading && <Loading />}
       </div>
-     }
-  </>
   );
 }
 
