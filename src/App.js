@@ -9,16 +9,16 @@ import Subscribe from './component/subscribe/subscribe';
 import Teacher from './component/teacher/teacher';
 import CircularProgress from '@mui/material/CircularProgress';
 import './App.css';
-// import Timer from './component/timer';
 
 
 function App() {
   const [loading, setLoading] = useState(true);
 
+
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 2500);
   }, []);
 
 
@@ -38,7 +38,7 @@ function App() {
         <Blog />
         <Footer />
       </div>
-  }
+     }
   </>
   );
 }
