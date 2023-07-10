@@ -6,7 +6,7 @@ import { New,Old,Overall} from './data';
 import "./courses.css"
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useInfiniteQuery } from 'react-query';
-
+import Skeleton from '@mui/material/Skeleton';
 
 
 const fetchCourses = async (key, nextCursor = 0) => {
@@ -79,6 +79,7 @@ export default function Courses() {
         <div className={isFetching?'list-course active':'list-course'}>
           {coursesData?.map((item,id)=>{
             return(
+            !isFetching?
             <div className='course' key={id}>
                 <LazyLoadImage
                   alt={item.img}
@@ -109,7 +110,7 @@ export default function Courses() {
                     </div>
                   </div>                    
                 </div>
-            </div>
+            </div>: <Skeleton variant="rectangular" className='course' key={id} />
             )
            })}
           </div>

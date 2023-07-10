@@ -45,7 +45,7 @@
     opacity: 0.5;
 }
 .course{
-    height: 23rem;
+    height: 23rem !important;
     overflow: hidden;
     border-radius: 12px;
     position: relative;
