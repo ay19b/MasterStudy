@@ -9,11 +9,14 @@ import Subscribe from './component/subscribe/subscribe';
 import Teacher from './component/teacher/teacher';
 import './App.css';
 import Loading from './component/loading/loading';
+import { QueryClientProvider, QueryClient } from 'react-query'
+
+
+const queryClient = new QueryClient()
 
 
 function App() {
   const [loading, setLoading] = useState(true);
-
 
   useEffect(() => {
     setTimeout(() => {
@@ -23,6 +26,7 @@ function App() {
 
 
   return (
+    <QueryClientProvider client={queryClient}>
       <div className={!loading?"App":'AppLoading'}>
         <Header />
         <Home />
@@ -34,6 +38,7 @@ function App() {
         <Footer />
         {loading && <Loading />}
       </div>
+    </QueryClientProvider>
   );
 }
 

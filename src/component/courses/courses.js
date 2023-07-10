@@ -5,51 +5,51 @@ import {HiOutlineUsers,HiOutlineEye} from "react-icons/hi"
 import { New,Old,Overall} from './data';
 import "./courses.css"
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { useInfiniteQuery } from 'react-query';
+
+
+
+const fetchCourses = async (key, nextCursor = 0) => {
+  const pageSize = 8;
+  const data = key === 'New' ? New : key === 'Old' ? Old : Overall;
+
+  const start = nextCursor * pageSize;
+  const end = start + pageSize;
+  const courses = data.slice(start, end);
+
+  return {
+    courses,
+    nextPageCursor: nextCursor + 1,
+    hasMore: end < data.length,
+  };
+};
 
 
 export default function Courses() {
   const [item, setItem] = useState('New');
-  const [Data, setData] = useState(New);
-  const [count, setCount] = useState(8);
-  const [showClassName, setShowClassName] = useState(false);
+  const { data, fetchNextPage, hasNextPage, isFetchingNextPage,isFetching ,error } = useInfiniteQuery(
+    ['courses', item],
+    ({ pageParam }) => fetchCourses(item, pageParam),
+    {
+      getNextPageParam: (lastPage) => (lastPage.hasMore ? lastPage.nextPageCursor : undefined),
+      cacheTime:2000,
+    }
+  );
 
+
+  const coursesData = data?.pages.flatMap((page) => page.courses) || [];
+
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
 
   const handleButtonClick = (value) => {
-    setCount(8);
-    setShowClassName(true);
     setItem(value);
   };
 
-  const More = () => {
-    if(count<Data.length){
-      setShowClassName(true)
-    }
-    setTimeout(()=>{
-      setCount(count + 4)
-      setShowClassName(false)
-    },2000)   
-  };
 
-  useEffect(() => {
-    if (item === 'New') {
-      setData(New);
-    } else if (item === 'Old') {
-      setData(Old);
-    }else if (item === 'Overall') {
-      setData(Overall);
-    }
-  }, [item]);
-
-  useEffect(() => {
-    if (showClassName) {
-      const timeout = setTimeout(() => {
-        setShowClassName(false);
-      }, 2000);
-
-      return () => clearTimeout(timeout);
-    }
-  }, [showClassName]);
-
+  console.log(coursesData);
   return (
     <div className='courses'>
       <div className='container'>
@@ -76,10 +76,8 @@ export default function Courses() {
             </button>
           </div>
         </div>
-        <div className={showClassName?'list-course active':'list-course'}>
-          {Data
-          .slice(0,count)
-          .map((item,id)=>{
+        <div className={isFetching?'list-course active':'list-course'}>
+          {coursesData?.map((item,id)=>{
             return(
             <div className='course' key={id}>
                 <LazyLoadImage
@@ -115,7 +113,11 @@ export default function Courses() {
             )
            })}
           </div>
-          <button className='more' onClick={More}>Load More</button>
+          {hasNextPage && (
+           <button className='more' onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
+             {isFetchingNextPage ? 'Loading more...' : 'Load More'}
+           </button>
+          )}
       </div>
     </div>
   )
