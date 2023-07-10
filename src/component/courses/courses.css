@@ -49,6 +49,7 @@
     overflow: hidden;
     border-radius: 12px;
     position: relative;
+    width: 100% !important;
 }
 .course img{
     object-fit: cover;

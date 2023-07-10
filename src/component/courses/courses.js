@@ -4,7 +4,6 @@ import {AiOutlineHeart} from "react-icons/ai"
 import {HiOutlineUsers,HiOutlineEye} from "react-icons/hi"
 import { New,Old,Overall} from './data';
 import "./courses.css"
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useInfiniteQuery } from 'react-query';
 import Skeleton from '@mui/material/Skeleton';
 
@@ -33,6 +32,8 @@ export default function Courses() {
     {
       getNextPageParam: (lastPage) => (lastPage.hasMore ? lastPage.nextPageCursor : undefined),
       cacheTime:2000,
+      staleTime:6000,
+      keepPreviousData: true
     }
   );
 
@@ -48,8 +49,6 @@ export default function Courses() {
     setItem(value);
   };
 
-
-  console.log(coursesData);
   return (
     <div className='courses'>
       <div className='container'>
@@ -76,43 +75,45 @@ export default function Courses() {
             </button>
           </div>
         </div>
-        <div className={isFetching?'list-course active':'list-course'}>
-          {coursesData?.map((item,id)=>{
-            return(
-            !isFetching?
-            <div className='course' key={id}>
-                <LazyLoadImage
-                  alt={item.img}
-                  src={item.img} 
-                />
-                <div className='overlay'></div>
-                <div className='course-content'>
-                  <div className='info-course'>
-                    <h4>{item.type}</h4>
-                    <h3>Basics of MasterStudy Education Theme</h3>
-                    <span className='free'>Free</span>
-                    <div className='detail-course'>
-                      <p>MasterStudy is the best choice for everyone! Masterstudy LMS is a feature-rich WP product f..</p>
-                      <div className='rating'>
-                        <Rating name="read-only" value={4} readOnly className='iconRating'/>
-                        <AiOutlineHeart className='svg'/>
-                      </div>
-                      <div className='viewes'>
-                        <div className='view'>
-                          <HiOutlineUsers />
-                          <h6>1815</h6>
-                        </div>
-                        <div className='view'>
-                          <HiOutlineEye />
-                          <h6>288515</h6>
+          <div className={isFetching ? 'list-course active' : 'list-course'}>
+            {!isFetching ? (
+              coursesData?.map((item, id) => {
+                return (
+                  <div className='course' key={id}>
+                    <img alt={item.img} src={item.img} />
+                    <div className='overlay'></div>
+                    <div className='course-content'>
+                      <div className='info-course'>
+                        <h4>{item.type}</h4>
+                        <h3>Basics of MasterStudy Education Theme</h3>
+                        <span className='free'>Free</span>
+                        <div className='detail-course'>
+                          <p>
+                             MasterStudy is the best choice for everyone! Masterstudy LMS is a feature-rich WP product f..
+                           </p>
+                          <div className='rating'>
+                            <Rating name='read-only' value={4} readOnly className='iconRating' />
+                            <AiOutlineHeart className='svg' />
+                          </div>
+                          <div className='viewes'>
+                            <div className='view'>
+                               <HiOutlineUsers />
+                              <h6>1815</h6>
+                            </div>
+                            <div className='view'>
+                              <HiOutlineEye />
+                              <h6>288515</h6>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>                    
-                </div>
-            </div>: <Skeleton variant="rectangular" className='course' key={id} />
-            )
-           })}
+                  </div>
+                );
+               })
+            ) : (
+               <Skeleton variant='rectangular' className='course' />
+             )}
           </div>
           {hasNextPage && (
            <button className='more' onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
