@@ -50,7 +50,6 @@
     border-radius: 12px;
     position: relative;
     width: 100% !important;
-    min-width: 18rem !important;
 }
 .course img{
     object-fit: cover;
