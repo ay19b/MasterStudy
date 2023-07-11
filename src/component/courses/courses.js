@@ -26,7 +26,7 @@ const fetchCourses = async (key, nextCursor = 0) => {
 
 export default function Courses() {
   const [item, setItem] = useState('New');
-  const { data, fetchNextPage, hasNextPage, isFetchingNextPage,isFetching ,error } = useInfiniteQuery(
+  const { data, fetchNextPage, hasNextPage, isFetchingNextPage,isFetching ,error,isLoading,isFetched } = useInfiniteQuery(
     ['courses', item],
     ({ pageParam }) => fetchCourses(item, pageParam),
     {
@@ -37,7 +37,10 @@ export default function Courses() {
     }
   );
 
-
+  if (isLoading) {
+    return <h2>Loading...</h2>
+  }
+  
   const coursesData = data?.pages.flatMap((page) => page.courses) || [];
 
 
@@ -49,6 +52,7 @@ export default function Courses() {
     setItem(value);
   };
 
+  console.log({isFetched});
   return (
     <div className='courses'>
       <div className='container'>
