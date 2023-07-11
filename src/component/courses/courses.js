@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {useState } from 'react'
 import Rating from '@mui/material/Rating';
 import {AiOutlineHeart} from "react-icons/ai"
 import {HiOutlineUsers,HiOutlineEye} from "react-icons/hi"
@@ -80,9 +80,9 @@ export default function Courses() {
           </div>
         </div>
           <div className={isFetching ? 'list-course active' : 'list-course'}>
-            {!isFetching ? (
-              coursesData?.map((item, id) => {
+            {coursesData?.map((item, id) => {
                 return (
+                  !isFetching?
                   <div className='course' key={id}>
                     <img alt={item.img} src={item.img} />
                     <div className='overlay'></div>
@@ -112,12 +112,12 @@ export default function Courses() {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div>: (
+                    <Skeleton variant='rectangular' className='course' />
+                  )
                 );
                })
-            ) : (
-               <Skeleton variant='rectangular' className='course' />
-             )}
+              }
           </div>
           {hasNextPage && (
            <button className='more' onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
